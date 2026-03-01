@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛡️ Overwatch AI
 
-## Getting Started
+**Overwatch AI** is a high-performance command center designed to intercept and expose AI-powered scams. Built with **Next.js 14**, it leverages Google’s **Gemini 2.5 Flash** multimodal models to provide real-time threat intelligence through a cinematic, futuristic interface.
 
-First, run the development server:
+---
 
+## ✨ Core Features
+
+### 🔍 Multimodal Threat Detection
+* **Audio (Voice Notes):** Analyzes voice for AI synthesis artifacts, robotic formants, and classic scam scripts (e.g., fake emergencies).
+* **Images (Screenshots):** Scans for phishing indicators, spoofed logos, and suspicious URLs.
+* **Text/URLs:** Detects social engineering language, urgency tactics, and known scam patterns.
+
+### ⚡ Cinematic Dashboard Interface
+Built with **React**, **Tailwind CSS**, and **Framer Motion**, the UI features:
+* **Futuristic Architecture:** Glassmorphism, responsive layouts, and glowing accents (`overwatch-green`, `overwatch-blue`, `overwatch-red`, `overwatch-amber`).
+* **Dynamic State Machine:**
+    * **Idle:** Initial dropzone and file selection.
+    * **Scanning:** Real-time radar pulses and an active analyzing ticker.
+    * **Verdict:** Detailed data visualization of the final security report.
+
+### 🤖 Advanced AI Integration
+* Powered by `gemini-2.5-flash` via the `@google/generative-ai` SDK.
+* **Structured Intelligence:** Strict JSON schema enforcement ensures the app receives precise data:
+    * Threat Level & Authenticity Score
+    * Manipulation Tactics & Credibility Ratings
+    * Comprehensive Analysis Report
+
+---
+
+## 🏗️ Application Architecture
+
+### Frontend (`app/page.tsx`)
+The primary client-side interface (`OverwatchApp`) encapsulates the UI state:
+* **IdleView:** The entry point for file/text input.
+* **ScanningView:** An immersive animation sequence simulating a deep security sweep.
+* **VerdictView:** The final dashboard displaying the AI's findings.
+
+### Backend (`app/api/scan/route.ts`)
+A Next.js serverless API route that:
+1.  Receives file and text payloads.
+2.  Constructs dynamic system prompts based on media type.
+3.  Securely interfaces with the Gemini API.
+4.  Returns a parsed JSON report to the client.
+
+### Global Styles (`app/globals.css`)
+Contains the dark-mode aesthetic and custom CSS animations, including the signature "scanning sweep" effect.
+
+---
+
+## 🚀 Getting Started
+
+### 1. Installation
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+git clone [https://github.com/your-username/overwatch-ai.git](https://github.com/your-username/overwatch-ai.git)
+cd overwatch-ai
+npm install
